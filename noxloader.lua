@@ -7,6 +7,7 @@ local BASE = 'https://raw.githubusercontent.com/NOX-SCRIPT/NOX/main/GAMES/'
 local games = {
     [825735094] = 'sae.lua',
     [4372130] = 'bloxfruits.lua',
+    [8818124] = 'vd.lua',
 }
 
 local file = games[game.PlaceId] or games[game.CreatorId]
