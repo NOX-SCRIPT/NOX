@@ -1,24 +1,19 @@
 if not game:IsLoaded() then
-game.Loaded:Wait()
+    game.Loaded:Wait()
 end
 
-local BASE = "https://raw.githubusercontent.com/NOX-SCRIPT/NOX/main/GAMES/"
+local BASE = 'https://raw.githubusercontent.com/NOX-SCRIPT/NOX/main/GAMES/'
 
-local NOX = {
-[825735094] = "sae.lua",
+local games = {
+    [825735094] = 'sae.lua',
+    [4372130] = 'bloxfruits.lua',
 }
 
-local function getScriptPath()
-return NOX[game.PlaceId] or NOX[game.CreatorId]
+local file = games[game.PlaceId] or games[game.CreatorId]
+
+if file then
+    task.wait(math.random())
+    pcall(function()
+        loadstring(game:HttpGet(BASE .. file))()
+    end)
 end
-
-local function main()
-local file = getScriptPath()
-
-if not file then  
-    return  
-end
-
-end
-
-pcall(main)
