@@ -1,3 +1,6 @@
+-- NOX SCRIPT LOADER
+-- Repository: NOX-SCRIPT/NOX
+-- Routes configured game IDs to script files in GAMES/.
 
 if not game:IsLoaded() then
     game.Loaded:Wait()
@@ -7,26 +10,27 @@ local BASE = "https://raw.githubusercontent.com/NOX-SCRIPT/NOX/refs/heads/main/G
 
 local NOX = {
     [825735094] = "sae.lua",
-    [4372130] = "bloxfruits.lua",
+
+    -- Blox Fruits place IDs; verify these are the places you intend to support.
+    [2753915549] = "bloxfruits.lua",
+    [4442272183] = "bloxfruits.lua",
+    [7449423635] = "bloxfruits.lua",
 }
 
-local function getScriptPath()
-    return NOX[game.PlaceId]
-end
-
-local function main()
-    local file = getScriptPath()
-
+local function getScriptURL()
+    local file = NOX[game.PlaceId]
     if not file then
-        return
+        return nil
     end
-
-    local url = BASE .. file
-    return url
+    return BASE .. file
 end
 
-local success, result = pcall(main)
-
-if success and result then
-    return result
+local url = getScriptURL()
+if not url then
+    return
 end
+
+-- This loader deliberately resolves the configured URL only.
+-- For Roblox experiences you own, use ModuleScripts/require() in Studio
+-- rather than executor-based remote code execution.
+return url
