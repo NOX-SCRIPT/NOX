@@ -12,6 +12,9 @@ local games = {
     [1034205759] = 'bvsb.lua',
     [241962998] = 'sa.lua',
     [33017480] = 'animedice.lua',
+    [964523081] = 'sfe.lua',
+    [3461453] = 'rivals.lua',
+    [900458044] = 'sfth.lua',
 }
 
 local file = games[game.PlaceId] or games[game.CreatorId]
