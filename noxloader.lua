@@ -11,6 +11,7 @@ local games = {
     [212140315] = 'ftap.lua',
     [1034205759] = 'bvsb.lua',
     [241962998] = 'sa.lua',
+    [33017480] = 'animedice.lua',
 }
 
 local file = games[game.PlaceId] or games[game.CreatorId]
