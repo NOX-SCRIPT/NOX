@@ -15,6 +15,8 @@ local games = {
     [964523081] = 'sfe.lua',
     [3461453] = 'rivals.lua',
     [900458044] = 'sfth.lua',
+    [33751825] = 'bloxstrike.lua',
+    [12851171] = 'sl2.lua',
 }
 
 local file = games[game.PlaceId] or games[game.CreatorId]
